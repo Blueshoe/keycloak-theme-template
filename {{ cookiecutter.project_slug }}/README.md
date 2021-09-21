@@ -100,4 +100,4 @@ The local Keycloak server should now be set up to send e-mails to MailDev. To ch
 7. Visit [MailDev](http://localhost:8081). You should see a reset password e-mail from Keycloak.
 
 ## Releasing
-Build the Keycloak Dockerfile and push it to the registry from which your production environments deploys.
+Build the Keycloak Dockerfile and push it to the registry from which your production environments deploy.
