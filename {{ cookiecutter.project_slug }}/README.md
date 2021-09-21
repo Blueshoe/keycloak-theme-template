@@ -37,13 +37,13 @@ More on the theme configuration [here](https://www.keycloak.org/docs/latest/serv
 ### Set up the realm
 1) Login in at [http://localhost:8080/auth/admin/](http://localhost:8080/auth/admin/)
 
- <img alt="" src="docs/img/1_login.png" width="512" height="335">
+ <img alt="" src="docs/img/1_login.png">
 
 The default admin credentials are _admin_ as both user and password.
 
 2) Go to the _Master realm_ theme settings  [http://localhost:8080/auth/admin/master/console/#/realms/master/theme-settings](http://localhost:8080/auth/admin/master/console/#/realms/master/theme-settings)
 
- <img alt="" src="docs/img/2_settings.png" width="512" height="335">
+ <img alt="" src="docs/img/2_settings.png">
 
 Select for the **Login Theme** from the dropdown ("Select one...") _{{ cookiecutter.theme_title }}_.
 Do the same for other theme aspects if your template provides customizations.
