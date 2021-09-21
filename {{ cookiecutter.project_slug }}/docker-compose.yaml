@@ -1,0 +1,39 @@
+services:
+
+  postgresql:
+    image: "bitnami/postgresql:latest"
+    ports:
+      - "5432"
+    environment:
+      POSTGRESQL_USERNAME: "keycloak"
+      POSTGRESQL_PASSWORD: "keycloak"
+      POSTGRESQL_DATABASE: "keycloak"
+
+  keycloak:
+    container_name: keycloak
+    image: {{ cookiecutter.keycloak_image }}:{{ cookiecutter.keycloak_tag }}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresql
+    volumes:
+      - ./{{ cookiecutter.theme_title }}/:/opt/jboss/keycloak/themes/{{ cookiecutter.theme_title }}/
+      - ./configuration/standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone.xml
+    environment:
+      DB_VENDOR: "postgres"
+      DB_ADDR: "postgresql"
+      DB_PORT: "5432"
+      DB_DATABASE: "keycloak"
+      DB_USER: "keycloak"
+      DB_PASSWORD: "keycloak"
+      KEYCLOAK_PASSWORD: "admin"
+      KEYCLOAK_USER: "admin"
+    command:
+      - -b 0.0.0.0 --server-config=standalone.xml
+
+  maildev:
+    container_name: maildev
+    image: djfarrelly/maildev:1.1.0
+    ports:
+      - "8081:80"
+      - "25"

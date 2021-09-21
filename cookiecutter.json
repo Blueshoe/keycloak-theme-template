@@ -1,0 +1,6 @@
+{
+    "project_slug": "keycloak-project",
+    "theme_title": "mytheme",
+    "keycloak_tag": "15.0.2",
+    "keycloak_image": "quay.io/keycloak/keycloak"
+}
