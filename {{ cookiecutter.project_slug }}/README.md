@@ -1,4 +1,4 @@
-#{{ cookiecutter.project_slug }} Keycloak theme project
+# {{ cookiecutter.project_slug }} Keycloak theme project
 
 Keycloak is a popular open-source identity provider: [https://www.keycloak.org/](https://www.keycloak.org/)  
 
